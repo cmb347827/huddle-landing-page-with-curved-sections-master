@@ -93,7 +93,7 @@ Users should be able to:
 
 - Daily tutorials and projects in HTML5, CSS3, Javascript, Bootstrap, Sass/SCSS, some jQuery. For now, in time I will go re-learn React ect.
 
-###useful-resources
+### useful-resources
 
 [Split a div into four equal parts](https://stackoverflow.com/questions/40233044/split-a-div-into-four-equal-div)
 
