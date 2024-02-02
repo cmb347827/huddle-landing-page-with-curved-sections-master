@@ -26,15 +26,6 @@ $fallback-colors: (
   background-color: $color;
 }
 
-@mixin width($grid-size) {
-  width: $grid-size * 1px;
-}
-@mixin max-width($grid-size) {
-  max-width: $grid-size * 1px;
-}
-@mixin min-width($grid-size) {
-  min-width: $grid-size * 1px;
-}
 @mixin border-radius($radius...) {
   border-radius: $radius;
 }
@@ -56,7 +47,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: auto;
-  font:{
+  font: {
      size: $font_size-16;
      weight: $font_weight-normal;
 	 family: 'Open Sans', sans-serif;
@@ -66,7 +57,7 @@ body {
 
 .container {
     position:relative;
-    @include width($container__form-xs);
+    width:$container__form-xs;
 	height:100%;
 	top: 35px;
 	.btn-primary{
@@ -80,21 +71,21 @@ body {
 		}
     }
 	
-	font:{
+	font: {
 	   size: $font_size-16 * 1.2;
     }
     @for $i from 1 through 4 {
 	    
 	    &_#{$i} {
 		   /*update widths for &_1 to &_4*/
-		   @include width($container__form-xs);
-		   @media screen and(min-width:$container__form-xxl * 1px){
-		      @include width($container__form-xxl);
+		   width:$container__form-xs;
+		   @media screen and(min-width:$container__form-xxl){
+		      width:$container__form-xxl;
 		   }
 		}
 		h#{$i}{
 		  /*update font for headings h1-h4 */ 
-		  font:{
+		  font: {
 			 family: 'Poppins', sans-serif;
 		     weight:$font_weight-bold;
 		  }
@@ -106,7 +97,7 @@ body {
 	     transform:scale(0.6,0.6);
 		 position:relative;
 		 right: 25px;
-		 @media screen and(min-width:$container__form-xxl *1px){
+		 @media screen and(min-width:$container__form-xxl){
 		    transform:scale(0.8,0.8);
 		 }
 	  }
@@ -115,24 +106,24 @@ body {
 		 border:3px solid map-get($colors,Light Pink);
 		 @include border-radius(25px);
 	  }
-	  @media screen and(min-width:$container__form-xxl * 1px){
+	  @media screen and(min-width:$container__form-xxl){
 	     @include padding(150px 0);
 	  }
 	}	
     &_2{
 	  .huge{
-	     font:{
+	     font: {
 		   size:$font_size-28 * 3;
 		   weight:$font_weight-bold;
 		 }
 	  }
 	  #mockup{
 	     transform:scale(0.6,0.6);
-		 @media screen and(min-width:$container__form-xxl *1px){
+		 @media screen and(min-width:$container__form-xxl){
 		    transform:scale(0.8,0.8);
 		 }
 	  }
-	  @media screen and(min-width:$container__form-xxl * 1px){
+	  @media screen and(min-width:$container__form-xxl){
 	     @include padding(50px 150px);
 	  }
 	}
@@ -144,39 +135,39 @@ body {
 		z-index:-1;
 	  }
 	  .padding{
-	      @media screen and(min-width:$container__form-xxl * 1px){
+	      @media screen and(min-width:$container__form-xxl){
 		     @include padding(0 0 0 25px);
 		  }
 	  }
 	  #grow{
 	     margin-top:-600px;
-	    @media screen and(min-width:$container__form-xxl * 1px){
+	    @media screen and(min-width:$container__form-xxl){
 		    margin-top:-1200px;
 		 }
 	  }
 	  #flowing{
 	    margin-top:150px;
 		margin-bottom:150px;
-	    @media screen and(min-width:$container__form-xxl * 1px){
+	    @media screen and(min-width:$container__form-xxl){
 		    margin-top: 100px;
 			margin-bottom:-200px;
 		}
 	  }
 	  #users{
 	     margin-top:-500px;
-	     @media screen and(min-width:$container__form-xxl-min * 1px){
+	     @media screen and(min-width:$container__form-xxl-min){
 	        margin-top: -650px;
 		 }
 	  }
 	  #community{
 	     margin-top: 200px;
-	     @media screen and(min-width:$container__form-xxl * 1px){
+	     @media screen and(min-width:$container__form-xxl){
 	        margin-top: 100px;
 		 }
 	  }
 	  .margin-top{
 		    margin-top:-400px;
-		    @media screen and(min-width:$container__form-xxl * 1px){
+		    @media screen and(min-width:$container__form-xxl){
 			    margin-top:0;
 			}
 	  }
@@ -190,7 +181,7 @@ body {
 			     height: 75px;
 			     background: url(./images/bg-section-top-mobile-1.svg) top left/100% 100% no-repeat;
 			     transform:translateY(600px);
-			     @media screen and(min-width:$container__form-xxl * 1px){
+			     @media screen and(min-width:$container__form-xxl){
 			       height:100px;
 				   background: url(./images/bg-section-top-desktop-1.svg) top left/100% 100% no-repeat;
 				   transform:translateY(900px);
@@ -200,7 +191,7 @@ body {
 			     height: 75px;
 			     background:url(./images/bg-section-top-mobile-2.svg) top left/100% 100% no-repeat;
 			     transform:translateY(600px) rotate(180deg);
-			     @media screen and(min-width:$container__form-xxl * 1px){
+			     @media screen and(min-width:$container__form-xxl){
 			       height:100px;
 				   background:url(./images/bg-section-top-desktop-2.svg) top left/100% 100% no-repeat;
 			       transform:translateY(900px) rotate(180deg);
@@ -210,16 +201,16 @@ body {
 			    height:700px;
 			    background-color:#F6FBFF;
 			    transform:translateY(600px);
-			    @media screen and(min-width:$container__form-xxl * 1px){
+			    @media screen and(min-width:$container__form-xxl){
 			      height:700px;
 			      transform:translateY(900px);
 			    }
 			  }
-			  @media screen and(min-width:$container__form-xxl * 1px){
+			  @media screen and(min-width:$container__form-xxl){
 			    height:400px;
 			  }
            }
-		   @media screen and(min-width:$container__form-xxl * 1px){
+		   @media screen and(min-width:$container__form-xxl){
 		     height:900px;
 		   }
 	    }
@@ -231,7 +222,7 @@ body {
 			  height:75px;
 			  background: url(./images/bg-section-bottom-mobile-1.svg) top left/100% 100% no-repeat;
 			  transform:translate(0,550px) rotate(180deg);
-			  @media screen and(min-width:$container__form-xxl * 1px){
+			  @media screen and(min-width:$container__form-xxl){
 			    height:1300px;
 				background: url(./images/bg-section-bottom-desktop-1.svg) top left/100% 100% no-repeat;
 			    transform:translate(0,800px) rotate(180deg);
@@ -241,7 +232,7 @@ body {
 			  height:75px;
 			  background:url(./images/bg-section-bottom-mobile-2.svg) top left/100% 100% no-repeat;
 			  transform:translate(0,530px);
-			  @media screen and(min-width:$container__form-xxl * 1px){
+			  @media screen and(min-width:$container__form-xxl){
                 height:1300px;
 				background:url(./images/bg-section-bottom-desktop-2.svg) top left/100% 100% no-repeat;
 			    transform:translate(0,800px);
@@ -251,28 +242,28 @@ body {
 			  height:550px;
 			  background-color:#F6FBFF;
 			  transform: translate(0,540px);
-			  @media screen and(min-width:$container__form-xxl * 1px){
+			  @media screen and(min-width:$container__form-xxl){
 			    height: 7500px;
 			    transform: translate(0,800px);
 			  }
 		    }
-			@media screen and(min-width:$container__form-xxl * 1px){
+			@media screen and(min-width:$container__form-xxl){
 			   height:400px;
 			}
 		 }
-		 @media screen and(min-width:$container__form-xxl * 1px){
+		 @media screen and(min-width:$container__form-xxl){
 		    height:800px;
 		 }
 	   }
 	  }
 	  .illustration{
 	     transform:scale(0.9,0.9);
-		 @media screen and(min-width:$container__form-xxl *1px){
+		 @media screen and(min-width:$container__form-xxl){
 		    transform:scale(0.7,0.7);
 		 }
 	  }
 	 
-	  @media screen and(min-width:$container__form-xxl * 1px){
+	  @media screen and(min-width:$container__form-xxl){
 	     margin-top:300px; 
 	  }
 	}
@@ -280,14 +271,14 @@ body {
 	  height:100%;
 	  form{
 	     min-height:300px;
-		 @media screen and(min-width:$container__form-xxl * 1px){
+		 @media screen and(min-width:$container__form-xxl){
 		   min-height:auto;
 		 }
 	  }
 	  margin-top:30px;
 	  #logo-bottom{
 	     transform:scale(0.9,0.9);
-		 @media screen and(min-width:$container__form-xxl *1px){
+		 @media screen and(min-width:$container__form-xxl){
 		    transform:scale(0.8,0.8);
 			position:relative;
 			right:15px;
@@ -299,7 +290,7 @@ body {
 	  input{
 	     width:320px;
 		 height:60px;
-		 @media screen and(min-width:$container__form-xxl * 1px){
+		 @media screen and(min-width:$container__form-xxl){
 		   width:400px;
 		 }
 	  }
@@ -314,7 +305,7 @@ body {
 		 @include margin(15px 0 45px 0);
 		 box-shadow: none;
 		 @include border-radius(0px);
-		 @media screen and(min-width:$container__form-xxl *1px){
+		 @media screen and(min-width:$container__form-xxl){
 		    @include margin(0 0 0 15px);
 		 }
 	  }
@@ -324,7 +315,7 @@ body {
 	     background:url(./images/bg-footer-top-mobile.svg) top left/100% 100% no-repeat;
 		 transform:translate(0,5px);
 		 z-index:1;
-		 @media screen and(min-width:$container__form-xxl * 1px){
+		 @media screen and(min-width:$container__form-xxl){
 		    background:url(./images/bg-footer-top-desktop.svg) top left/100% 100% no-repeat;
 		 }
 	  }
@@ -332,18 +323,18 @@ body {
 	     @include padding(50px 25px);
 		 @include font-color(map-get($colors,Very Pale Blue),nth($fallback-colors,5));
 	     @include bg-color(map-get($colors,Very Dark Cyan),nth($fallback-colors,4));
-		 @media screen and(min-width:$container__form-xxl * 1px){
+		 @media screen and(min-width:$container__form-xxl){
 		    @include padding(100px 50px);
 		 }
 	  }
-	  @media screen and(min-width:$container__form-xxl * 1px){
+	  @media screen and(min-width:$container__form-xxl){
 	  
 	  }
 	}
 	
-    @media screen and (min-width: $container__form-xxl * 1px) {
+    @media screen and (min-width: $container__form-xxl) {
 	   
-       @include width($container__form-xxl);
+       width:$container__form-xxl;
 	   @include padding(50px);  
 	   
     }
@@ -354,7 +345,7 @@ body {
   position:relative;
   @include margin(0 0 0 15px);
   top: 530%;
-  @media screen and(min-width:$container__form-xxl * 1px){
+  @media screen and(min-width:$container__form-xxl){
      top: 600%;
   }
   .attribution {
